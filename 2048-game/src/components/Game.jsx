@@ -15,14 +15,24 @@ const Game = () => {
   const [grid, setGrid] = useState(() => initializeGrid());
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(() => {
-    return parseInt(localStorage.getItem('bestScore')) || 0;
+    try {
+      return parseInt(localStorage.getItem('2048-bestScore')) || 0;
+    } catch (error) {
+      console.warn('无法从 localStorage 读取最高分：', error);
+      return 0;
+    }
   });
   const [gameWon, setGameWon] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [showWinMessage, setShowWinMessage] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(() => {
-    const saved = localStorage.getItem('soundEnabled');
-    return saved !== null ? saved === 'true' : true;
+    try {
+      const saved = localStorage.getItem('2048-soundEnabled');
+      return saved !== null ? saved === 'true' : true;
+    } catch (error) {
+      console.warn('无法从 localStorage 读取音效设置：', error);
+      return true;
+    }
   });
 
   // 处理移动操作（键盘和触摸通用）
@@ -38,7 +48,11 @@ const Game = () => {
       // 更新最高分
       if (newScore > bestScore) {
         setBestScore(newScore);
-        localStorage.setItem('bestScore', newScore.toString());
+        try {
+          localStorage.setItem('2048-bestScore', newScore.toString());
+        } catch (error) {
+          console.warn('无法保存最高分到 localStorage：', error);
+        }
       }
       
       // 检查胜利
@@ -79,24 +93,36 @@ const Game = () => {
   // 触摸控制ref
   const gameContainerRef = useTouchControls(performMove);
 
-  // 监听键盘事件
+  // 监听键盘事件和初始化
   useEffect(() => {
     window.addEventListener('keydown', handleKeyPress);
     
     // 初始化音效系统
     soundManager.setEnabled(soundEnabled);
     
+    // 清理函数：组件卸载时确保数据得到保存
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
+      // 确保最高分得到保存
+      try {
+        localStorage.setItem('2048-bestScore', bestScore.toString());
+        localStorage.setItem('2048-soundEnabled', soundEnabled.toString());
+      } catch (error) {
+        console.warn('组件卸载时无法保存数据：', error);
+      }
     };
-  }, [handleKeyPress, soundEnabled]);
+  }, [handleKeyPress, soundEnabled, bestScore]);
 
   // 切换音效状态
   const toggleSound = () => {
     const newSoundEnabled = !soundEnabled;
     setSoundEnabled(newSoundEnabled);
     soundManager.setEnabled(newSoundEnabled);
-    localStorage.setItem('soundEnabled', newSoundEnabled.toString());
+    try {
+      localStorage.setItem('2048-soundEnabled', newSoundEnabled.toString());
+    } catch (error) {
+      console.warn('无法保存音效设置到 localStorage：', error);
+    }
   };
 
   // 重新开始游戏
