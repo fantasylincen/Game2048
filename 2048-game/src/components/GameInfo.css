@@ -4,13 +4,22 @@
 }
 
 .score-container {
-  background: #bbada0;
+  background: linear-gradient(135deg, #cbb5a5 0%, #bbada0 50%, #ab9d90 100%);
   color: white;
   padding: 15px 20px;
   border-radius: 8px;
   text-align: center;
   min-width: 80px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* 立体效果 */
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(187, 173, 160, 0.8);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transform: translateZ(0);
+  transition: all 0.2s ease;
 }
 
 .score-label {
@@ -19,12 +28,61 @@
   text-transform: uppercase;
   margin-bottom: 5px;
   opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.5px;
 }
 
 .score-value {
   font-size: 24px;
   font-weight: bold;
   line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+/* 最高分特殊效果 */
+.score-container:last-child {
+  background: linear-gradient(135deg, #f1d681 0%, #edcf72 50%, #e9c863 100%);
+  border-color: rgba(237, 207, 114, 0.8);
+  box-shadow: 
+    0 5px 10px rgba(0, 0, 0, 0.25),
+    0 2px 5px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(237, 207, 114, 0.8),
+    0 0 15px rgba(237, 207, 114, 0.3);
+  transform: translateZ(2px);
+}
+
+.score-container:last-child .score-value {
+  color: #8f7a66;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  font-weight: 900;
+}
+
+.score-container:last-child .score-label {
+  color: #8f7a66;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+/* 悬停效果 */
+.score-container:hover {
+  transform: translateY(-1px) translateZ(2px);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.25),
+    0 3px 6px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(187, 173, 160, 0.8);
+}
+
+.score-container:last-child:hover {
+  transform: translateY(-1px) translateZ(4px);
+  box-shadow: 
+    0 7px 14px rgba(0, 0, 0, 0.3),
+    0 3px 7px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(237, 207, 114, 0.8),
+    0 0 20px rgba(237, 207, 114, 0.4);
 }
 
 /* 响应式设计 */
