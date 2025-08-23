@@ -5,17 +5,17 @@ import './Grid.css';
 const Grid = ({ grid }) => {
   return (
     <div className="grid-container">
-      <div className="grid-background">
-        {Array(16).fill(0).map((_, index) => (
-          <div key={index} className="grid-cell"></div>
-        ))}
-      </div>
-      
       <div className="grid-tiles">
+        {/* 背景格子 */}
+        {Array(16).fill(0).map((_, index) => (
+          <div key={`cell-${index}`} className="grid-cell"></div>
+        ))}
+        
+        {/* 实际方块 */}
         {grid.map((row, rowIndex) =>
           row.map((value, colIndex) => (
             <Tile
-              key={`${rowIndex}-${colIndex}`}
+              key={`tile-${rowIndex}-${colIndex}`}
               value={value}
               row={rowIndex}
               col={colIndex}
