@@ -2,7 +2,7 @@
   position: absolute;
   width: 100px;
   height: 100px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -10,8 +10,16 @@
   font-size: 32px;
   transition: all 0.15s ease-in-out;
   animation: tile-appear 0.2s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 10;
+  /* 立体效果 */
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.1) 100%);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transform: translateZ(0);
 }
 
 @keyframes tile-appear {
@@ -43,77 +51,180 @@
 .tile-position-3-2 { top: 330px; left: 220px; }
 .tile-position-3-3 { top: 330px; left: 330px; }
 
-/* 数字颜色主题 */
+/* 数字颜色主题 - 立体效果 */
 .tile-2 {
-  background: #eee4da;
+  background: linear-gradient(135deg, #f5f0e8 0%, #eee4da 50%, #e6d8c6 100%);
   color: #776e65;
+  border-color: rgba(238, 228, 218, 0.8);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(238, 228, 218, 0.8);
 }
 
 .tile-4 {
-  background: #ede0c8;
+  background: linear-gradient(135deg, #f4e7d1 0%, #ede0c8 50%, #e5d6b5 100%);
   color: #776e65;
+  border-color: rgba(237, 224, 200, 0.8);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(237, 224, 200, 0.8);
 }
 
 .tile-8 {
-  background: #f2b179;
+  background: linear-gradient(135deg, #f5c088 0%, #f2b179 50%, #ef9f5f 100%);
   color: #f9f6f2;
+  border-color: rgba(242, 177, 121, 0.8);
+  box-shadow: 
+    0 5px 10px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(242, 177, 121, 0.8);
 }
 
 .tile-16 {
-  background: #f59563;
+  background: linear-gradient(135deg, #f8a372 0%, #f59563 50%, #f28749 100%);
   color: #f9f6f2;
+  border-color: rgba(245, 149, 99, 0.8);
+  box-shadow: 
+    0 5px 10px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(245, 149, 99, 0.8);
 }
 
 .tile-32 {
-  background: #f67c5f;
+  background: linear-gradient(135deg, #f9856e 0%, #f67c5f 50%, #f36d4c 100%);
   color: #f9f6f2;
+  border-color: rgba(246, 124, 95, 0.8);
+  box-shadow: 
+    0 5px 10px rgba(0, 0, 0, 0.25),
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(246, 124, 95, 0.8);
 }
 
 .tile-64 {
-  background: #f65e3b;
+  background: linear-gradient(135deg, #f96e4a 0%, #f65e3b 50%, #f34e28 100%);
   color: #f9f6f2;
+  border-color: rgba(246, 94, 59, 0.8);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.25),
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(246, 94, 59, 0.8);
 }
 
 .tile-128 {
-  background: #edcf72;
+  background: linear-gradient(135deg, #f1d681 0%, #edcf72 50%, #e9c863 100%);
   color: #f9f6f2;
   font-size: 28px;
+  border-color: rgba(237, 207, 114, 0.8);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.3),
+    0 3px 6px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(237, 207, 114, 0.8),
+    0 0 20px rgba(237, 207, 114, 0.3);
 }
 
 .tile-256 {
-  background: #edcc61;
+  background: linear-gradient(135deg, #f1d370 0%, #edcc61 50%, #e9c552 100%);
   color: #f9f6f2;
   font-size: 28px;
+  border-color: rgba(237, 204, 97, 0.8);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.3),
+    0 3px 6px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(237, 204, 97, 0.8),
+    0 0 25px rgba(237, 204, 97, 0.4);
 }
 
 .tile-512 {
-  background: #edc850;
+  background: linear-gradient(135deg, #f1d05f 0%, #edc850 50%, #e9c141 100%);
   color: #f9f6f2;
   font-size: 28px;
+  border-color: rgba(237, 200, 80, 0.8);
+  box-shadow: 
+    0 7px 14px rgba(0, 0, 0, 0.3),
+    0 3px 6px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(237, 200, 80, 0.8),
+    0 0 30px rgba(237, 200, 80, 0.5);
 }
 
 .tile-1024 {
-  background: #edc53f;
+  background: linear-gradient(135deg, #f1cd4e 0%, #edc53f 50%, #e9bd30 100%);
   color: #f9f6f2;
   font-size: 24px;
+  border-color: rgba(237, 197, 63, 0.8);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.35),
+    0 4px 8px rgba(0, 0, 0, 0.25),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -2px 0 rgba(237, 197, 63, 0.8),
+    0 0 40px rgba(237, 197, 63, 0.6);
+  transform: translateZ(2px);
 }
 
 .tile-2048 {
-  background: #edc22e;
+  background: linear-gradient(135deg, #f1ca3d 0%, #edc22e 50%, #e9ba1f 100%);
   color: #f9f6f2;
   font-size: 24px;
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.4);
+  border-color: rgba(237, 194, 46, 0.9);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.4),
+    0 5px 10px rgba(0, 0, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -2px 0 rgba(237, 194, 46, 0.9),
+    0 0 50px rgba(243, 215, 116, 0.8),
+    0 0 100px rgba(243, 215, 116, 0.4);
+  transform: translateZ(4px);
+  animation: tile-glow 2s ease-in-out infinite alternate;
 }
 
-/* 大数字样式 */
+@keyframes tile-glow {
+  0% {
+    box-shadow: 
+      0 10px 20px rgba(0, 0, 0, 0.4),
+      0 5px 10px rgba(0, 0, 0, 0.3),
+      inset 0 2px 0 rgba(255, 255, 255, 0.6),
+      inset 0 -2px 0 rgba(237, 194, 46, 0.9),
+      0 0 50px rgba(243, 215, 116, 0.8),
+      0 0 100px rgba(243, 215, 116, 0.4);
+  }
+  100% {
+    box-shadow: 
+      0 12px 24px rgba(0, 0, 0, 0.4),
+      0 6px 12px rgba(0, 0, 0, 0.3),
+      inset 0 2px 0 rgba(255, 255, 255, 0.7),
+      inset 0 -2px 0 rgba(237, 194, 46, 0.9),
+      0 0 60px rgba(243, 215, 116, 1),
+      0 0 120px rgba(243, 215, 116, 0.6);
+  }
+}
+
+/* 大数字样式 - 立体效果 */
 .tile-4096,
 .tile-8192,
 .tile-16384,
 .tile-32768,
 .tile-65536 {
-  background: #3c3a32;
+  background: linear-gradient(135deg, #454340 0%, #3c3a32 50%, #333129 100%);
   color: #f9f6f2;
   font-size: 20px;
+  border-color: rgba(60, 58, 50, 0.8);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(60, 58, 50, 0.8),
+    0 0 30px rgba(60, 58, 50, 0.4);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* 响应式设计 */
@@ -122,6 +233,13 @@
     width: 70px;
     height: 70px;
     font-size: 24px;
+    border-radius: 6px;
+    /* 移动端立体效果调整 */
+    box-shadow: 
+      0 3px 6px rgba(0, 0, 0, 0.2),
+      0 1px 3px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
   
   .tile-position-0-0 { top: 0; left: 0; }
