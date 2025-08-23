@@ -1,0 +1,161 @@
+.tile {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  transition: all 0.15s ease-in-out;
+  animation: tile-appear 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes tile-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 位置定义 */
+.tile-position-0-0 { top: 0; left: 0; }
+.tile-position-0-1 { top: 0; left: 115px; }
+.tile-position-0-2 { top: 0; left: 230px; }
+.tile-position-0-3 { top: 0; left: 345px; }
+.tile-position-1-0 { top: 115px; left: 0; }
+.tile-position-1-1 { top: 115px; left: 115px; }
+.tile-position-1-2 { top: 115px; left: 230px; }
+.tile-position-1-3 { top: 115px; left: 345px; }
+.tile-position-2-0 { top: 230px; left: 0; }
+.tile-position-2-1 { top: 230px; left: 115px; }
+.tile-position-2-2 { top: 230px; left: 230px; }
+.tile-position-2-3 { top: 230px; left: 345px; }
+.tile-position-3-0 { top: 345px; left: 0; }
+.tile-position-3-1 { top: 345px; left: 115px; }
+.tile-position-3-2 { top: 345px; left: 230px; }
+.tile-position-3-3 { top: 345px; left: 345px; }
+
+/* 数字颜色主题 */
+.tile-2 {
+  background: #eee4da;
+  color: #776e65;
+}
+
+.tile-4 {
+  background: #ede0c8;
+  color: #776e65;
+}
+
+.tile-8 {
+  background: #f2b179;
+  color: #f9f6f2;
+}
+
+.tile-16 {
+  background: #f59563;
+  color: #f9f6f2;
+}
+
+.tile-32 {
+  background: #f67c5f;
+  color: #f9f6f2;
+}
+
+.tile-64 {
+  background: #f65e3b;
+  color: #f9f6f2;
+}
+
+.tile-128 {
+  background: #edcf72;
+  color: #f9f6f2;
+  font-size: 28px;
+}
+
+.tile-256 {
+  background: #edcc61;
+  color: #f9f6f2;
+  font-size: 28px;
+}
+
+.tile-512 {
+  background: #edc850;
+  color: #f9f6f2;
+  font-size: 28px;
+}
+
+.tile-1024 {
+  background: #edc53f;
+  color: #f9f6f2;
+  font-size: 24px;
+}
+
+.tile-2048 {
+  background: #edc22e;
+  color: #f9f6f2;
+  font-size: 24px;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.4);
+}
+
+/* 大数字样式 */
+.tile-4096,
+.tile-8192,
+.tile-16384,
+.tile-32768,
+.tile-65536 {
+  background: #3c3a32;
+  color: #f9f6f2;
+  font-size: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 520px) {
+  .tile {
+    width: 70px;
+    height: 70px;
+    font-size: 24px;
+  }
+  
+  .tile-position-0-0 { top: 0; left: 0; }
+  .tile-position-0-1 { top: 0; left: 80px; }
+  .tile-position-0-2 { top: 0; left: 160px; }
+  .tile-position-0-3 { top: 0; left: 240px; }
+  .tile-position-1-0 { top: 80px; left: 0; }
+  .tile-position-1-1 { top: 80px; left: 80px; }
+  .tile-position-1-2 { top: 80px; left: 160px; }
+  .tile-position-1-3 { top: 80px; left: 240px; }
+  .tile-position-2-0 { top: 160px; left: 0; }
+  .tile-position-2-1 { top: 160px; left: 80px; }
+  .tile-position-2-2 { top: 160px; left: 160px; }
+  .tile-position-2-3 { top: 160px; left: 240px; }
+  .tile-position-3-0 { top: 240px; left: 0; }
+  .tile-position-3-1 { top: 240px; left: 80px; }
+  .tile-position-3-2 { top: 240px; left: 160px; }
+  .tile-position-3-3 { top: 240px; left: 240px; }
+  
+  .tile-128,
+  .tile-256,
+  .tile-512 {
+    font-size: 20px;
+  }
+  
+  .tile-1024,
+  .tile-2048 {
+    font-size: 18px;
+  }
+  
+  .tile-4096,
+  .tile-8192,
+  .tile-16384,
+  .tile-32768,
+  .tile-65536 {
+    font-size: 16px;
+  }
+}
