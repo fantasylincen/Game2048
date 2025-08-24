@@ -22,6 +22,14 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/fantasylincen/Game2048
 curl -O https://raw.githubusercontent.com/fantasylincen/Game2048/main/deploy.sh && chmod +x deploy.sh && ./deploy.sh
 ```
 
+一键部署脚本将自动：
+- 克隆项目到本地
+- 检查并安装必要的依赖环境
+- 安装项目依赖
+- 启动开发服务器
+- 自动打开浏览器访问游戏
+- 提供停止和重新启动项目的说明
+
 ### 手动部署步骤
 
 1. 克隆项目代码：
@@ -53,6 +61,11 @@ curl -O https://raw.githubusercontent.com/fantasylincen/Game2048/main/deploy.sh 
 ### 访问游戏
 
 开发服务器启动后，默认访问地址为：http://localhost:5173
+
+### 停止和重新启动项目
+
+- **停止服务器**: 在运行服务器的终端窗口中按 `Ctrl+C`
+- **重新启动项目**: 在项目目录中运行 `npm run dev`
 
 ## 📁 项目结构
 
