@@ -6,76 +6,28 @@
 
 使用方向键（电脑）或滑动屏幕（手机）移动方块。当两个相同数字的方块接触时，它们会合并成一个！目标是达到2048！
 
-## 🚀 部署和运行说明
+## 🚀 一键部署
 
-### 系统要求
+### 使用一键部署脚本（推荐）
 
-- Node.js (版本 16 或更高)
-- npm 或 yarn 包管理器
+根据您的操作系统选择相应的命令：
 
-### 一键部署脚本
+**Windows (PowerShell):**
+```powershell
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/fantasylincen/Game2048/main/deploy-windows.ps1" -OutFile "deploy.ps1"; .\deploy.ps1
+```
 
-#### Windows系统
-
-1. 下载并安装Node.js：
-   - 访问 [Node.js官网](https://nodejs.org/zh-cn/)
-   - 下载Windows版本并安装
-
-2. 运行一键部署脚本：
-   ```batch
-   @echo off
-   echo 正在安装依赖...
-   npm install
-   echo 正在启动开发服务器...
-   npm run dev
-   ```
-
-#### macOS系统
-
-1. 安装Node.js（推荐使用Homebrew）：
-   ```bash
-   # 如果没有安装Homebrew，先安装Homebrew
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   
-   # 安装Node.js
-   brew install node
-   ```
-
-2. 运行一键部署脚本：
-   ```bash
-   #!/bin/bash
-   echo "正在安装依赖..."
-   npm install
-   echo "正在启动开发服务器..."
-   npm run dev
-   ```
-
-#### Linux系统 (Ubuntu/Debian)
-
-1. 安装Node.js：
-   ```bash
-   # 更新包管理器
-   sudo apt update
-   
-   # 安装Node.js
-   sudo apt install nodejs npm
-   ```
-
-2. 运行一键部署脚本：
-   ```bash
-   #!/bin/bash
-   echo "正在安装依赖..."
-   npm install
-   echo "正在启动开发服务器..."
-   npm run dev
-   ```
+**macOS/Linux:**
+```bash
+curl -O https://raw.githubusercontent.com/fantasylincen/Game2048/main/deploy.sh && chmod +x deploy.sh && ./deploy.sh
+```
 
 ### 手动部署步骤
 
-1. 克隆或下载项目代码：
+1. 克隆项目代码：
    ```bash
-   git clone <项目地址>
-   cd 2048-game
+   git clone https://github.com/fantasylincen/Game2048.git
+   cd Game2048
    ```
 
 2. 安装依赖：
